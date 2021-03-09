@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -x
+set -e
+
+cd ui
+npm install
+
+for i in $@; do
+  if [ $i = "shared" ]; then
+    npm install @peramic/controls
+  fi
+
+  node_modules/@angular/cli/bin/ng build mica-$i --prod
+  npm run assets-mica-$1
+  cd dist/mica-$i
+  npm publish
+  cd -
+done

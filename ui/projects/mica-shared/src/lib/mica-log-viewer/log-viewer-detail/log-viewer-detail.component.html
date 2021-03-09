@@ -1,0 +1,6 @@
+<mica-dialog caption="Message Details" (close)="onClose()" *ngIf="entry$ | async as entry">
+  <div class="items">
+    <div [title]="entry.level" [class]="'level ' + entry.level">&nbsp;</div>
+  </div>
+  <div class="log-message">{{ entry.message }}</div>
+</mica-dialog>

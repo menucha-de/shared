@@ -1,0 +1,8 @@
+<div class="header">
+  <img class="open-button" [class.disabled]="!enabled" [@header]="showContent && enabled" src="assets/images/section_arrow.png" (click)="toggle()">
+  <div class="header-label" [class.disabled]="!enabled || unexciting" (click)="toggle()">{{ label }}</div>
+  <ng-content select=".header"></ng-content>
+</div>
+<div [@content]="showContent && enabled" (@content.done)="done($event)" class="content">
+  <ng-content></ng-content>
+</div>

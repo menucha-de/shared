@@ -1,0 +1,157 @@
+$mica-line: 1px solid #e5e5e5;
+
+select {
+  &.mica-rounded {
+    appearance: none;
+    height: 36px;
+    border: 1px solid #ccc;
+    font-size: 100%;
+    line-height: 36px;
+    border-radius: 18px;
+    background: #FFFFFF url('assets/images/select_drop_down.png') no-repeat right;
+    // background: url('assets/images/select_drop_down.png') no-repeat right, linear-gradient(to top, #fff, #fafafa, #f8f8f8, #fcfcfc, #ededed, #ccc);
+    box-shadow: inset 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+    // box-shadow: 3px 1px 9px #ccc inset;
+    padding: 0 2em 0 0.65em;
+    color: #333;
+  }
+  &.mica-no-border {
+    background: transparent url('assets/images/select_drop_down.png') no-repeat right;
+    border: none;
+    width: 100%;
+    appearance: none;
+    font-size: 1em;
+    color: #333;
+    padding-right: 2em;
+  }
+}
+
+
+@-moz-document url-prefix() {
+  select {
+    padding: 0.25em 1.9em 0.25em 0.4em;
+  }
+}
+
+select.multiline {
+  background: initial;
+}
+
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=url] {
+  &.mica-rounded {
+    height: 36px;
+    border: 1px solid #ccc;
+    padding: 0 0.65em;
+    font-size: 100%;
+    line-height: 36px;
+    background-color: #fff;
+    box-shadow: inset 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+    box-sizing: border-box;
+    color: #333;
+  }
+  &.mica-no-border {
+    border: none;
+    box-sizing: border-box;
+    font-size: 100%;
+    background-color: transparent;
+    color: #333;
+  }
+  &:disabled {
+    color: #545454
+  }
+}
+
+input,
+select,
+button {
+  outline: none;
+  font-family: Arial, Helvetica, "Liberation Sans", sans-serif;
+}
+
+.confirm-button {
+  border-radius: 30px;
+  background: linear-gradient(rgba(255, 221, 84, 1), rgba(246, 205, 39, 1));
+  border: 1px solid #d2d2d2;
+  box-shadow: 0px 1px 0px #d2d2d2;
+  transition: all 1s;
+  padding: 0.3em 1em;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.confirm-button:hover {
+  cursor: pointer;
+  background: linear-gradient(rgba(246, 205, 39, 1), rgba(255, 221, 84, 1));
+  border: 1px solid #d2d2d2;
+  box-shadow: 0px 0px 0px #d2d2d2;
+  transition: all 1s;
+  padding: 0.3em 1em;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.ngx-contextmenu .dropdown-menu {
+  list-style: none;
+  padding: 0;
+  border-radius: 16px;
+  border: $mica-line;
+  box-shadow: 0px 9px 36px #888;
+  background: linear-gradient(rgba(254, 252, 243, 1), rgba(237, 237, 237, 1));
+  font-family: Arial, Helvetica, "Liberation Sans", sans-serif;
+  font-size: 1em;
+  color: #333;
+}
+
+.ngx-contextmenu li:first-child {
+  display: block;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.ngx-contextmenu li {
+  border-bottom: 1px solid #ebebeb;
+  padding: 0.5em;
+  font-weight: bold;
+}
+
+.ngx-contextmenu li:last-child {
+  border-bottom: none;
+}
+
+.ngx-contextmenu a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+button.mica-button {
+  height: 42px;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: left;
+  padding: 0 0.5em 0 0.5em;
+  background: linear-gradient(#fff, #f2f2f2);
+  border: $mica-line;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #d2d2d2;
+  cursor: pointer;
+}
+
+input[type=text].mica-input {
+  display: inline-block;
+  $height: 36px;
+  height: $height;
+  max-height: $height;
+  line-height: $height;
+  border-radius: $height / 2;
+  border: 1px solid #ccc;
+  padding: 0 0.88em;
+  font-size: 100%;
+  background-color: #fff;
+  box-shadow: inset 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+  margin-left: 12px;
+}

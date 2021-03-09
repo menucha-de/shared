@@ -1,0 +1,67 @@
+.targets {
+  width: 100%;
+  font-size: 1rem;
+  border-collapse: collapse;
+
+  tr {
+    line-height: 2em;
+    &:nth-child(even) {
+      background-color: #e4e4e4;
+    }
+    th:nth-child(1) {
+      text-align: left;
+    }
+    th:nth-child(2) {
+      text-align: left;
+    }
+    td:nth-child(2) {
+      width: 20em;
+      span {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 20em;
+        display: block;
+      }
+    }
+    td:nth-child(3) {
+      width: 8em;
+    }
+    td:nth-child(4) {
+      width: 4em;
+    }
+  }
+  select {
+    width: 100%;
+  }
+  .delete-button {
+    height: 40px;
+    width: 40px;
+    background-color: transparent;
+    background-image: url('assets/images/button_delete.png');
+    cursor: pointer;
+    margin: 0 auto;
+  }
+}
+
+.buttons {
+  margin-top: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.delete-all-button {
+  margin-left: auto;
+}
+
+.persistent {
+  margin-right: 2em;
+} 
+
+.max-entries {
+  width: 150px;
+}
+
+.label {
+  margin-right: 0.5em
+}

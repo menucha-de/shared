@@ -1,0 +1,16 @@
+<button (click)="onShowDialog()">Show Dialog</button>
+<mica-dialog *ngIf="showDialog" [title]="title" [okText]="okText" [whiteOut]="whiteOut" (close)="onClose($event)">
+  <div class="settings">
+    <div>
+      <label for="title">title</label><input id="title" type="text" [(ngModel)]="title">
+    </div>
+    <div>
+      <label for="okText">okText</label><input id="okText" type="text" [(ngModel)]="okText">
+    </div>
+    <div>
+      <label for="whiteOut">whiteOut</label><mica-switch id="whiteOut" [(ngModel)]="whiteOut"></mica-switch>
+    </div>
+  </div>
+</mica-dialog>
+<h4>Events</h4>
+<div>{{ lastEvent }}</div>

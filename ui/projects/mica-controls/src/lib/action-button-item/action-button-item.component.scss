@@ -1,0 +1,23 @@
+:host {
+  overflow: hidden;
+}
+span{
+  pointer-events: all;
+}
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.item {
+  cursor: pointer;
+  transition: width 0.5s;
+  background-repeat: no-repeat;
+  background-position: 0.3em center;
+  border-left: 1px solid #e5e5e5;
+  text-indent: 42px;
+  display: flex;
+  display: -ms-flexbox;
+  align-items: center;
+  width: 6em;
+}

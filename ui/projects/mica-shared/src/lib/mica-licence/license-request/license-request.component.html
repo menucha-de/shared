@@ -1,0 +1,16 @@
+<mica-dialog caption="Request Product Key"  okText="Back" (close)="onClose()" *ngIf="license$ | async as license">
+  <img class="items" src="assets/images/app_license_big.png">
+  <div class="content">
+    <label class="lbl">Contact your local sales person to request </label>
+    <div class="par">
+      <label>Product:</label>
+      <span>{{license.product}}</span>
+    </div>
+    <label class="lbl">and refer to the serial number of your HARTING IIC MICA</label>
+    <div class="par">
+      <label>S/N:</label>
+      <span>{{license.serial}}</span>
+    </div>
+    <button micaButton icon="app_license_copy.png" (click)="copy(license)" class="copy">Copy information to clipboard</button>
+  </div>
+</mica-dialog>

@@ -1,0 +1,3 @@
+export enum ResultStatus {
+    NONE = 'NONE', RUNNING = 'RUNNING', SUCCESSFULLY = 'SUCCESSFULLY', FAILED = 'FAILED'
+}

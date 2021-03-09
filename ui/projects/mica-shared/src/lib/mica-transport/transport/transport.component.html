@@ -1,0 +1,27 @@
+<label>Type
+  <select micaSelect [formControl]="type">
+    <option *ngFor="let type of subscriberTypes" [value]="type">{{ type | uppercase }}</option>
+  </select>
+</label>
+<label *ngIf="special">Connection <input micaInput type="text" [formControl]="connection">
+</label>
+<form [formGroup]="uriForm" *ngIf="parsable">
+  <label>Host <input micaInput type="text" formControlName="host"></label>
+  <label>Port <input micaInput type="number" formControlName="port" min="1" max="65535"></label>
+  <label *ngIf="!isMQTT && !isTcpUdp">Path Prefix<input micaInput type="text" formControlName="path"></label>
+  <label *ngIf="!isMQTT && !isTcpUdp">Query <input micaInput type="text" formControlName="query"></label>
+  <label *ngIf="isHTTP">Fragment <input micaInput type="text" formControlName="fragment"></label>
+  <label *ngIf="isHTTP || isMQTT">Username <input micaInput type="text" formControlName="username"></label>
+  <label *ngIf="isHTTP || isMQTT">Password <input micaInput type="text" formControlName="password"></label>
+  <label *ngIf="isMQTT">Topic Prefix<input micaInput type="text" formControlName="topic" micaExcludeChars regex="^[#+]"></label>
+  <label *ngIf="isMQTT">Client ID <input micaInput type="text" formControlName="clientid"></label>
+  <label *ngIf="isMQTT">QoS
+    <select micaSelect formControlName="qos">
+      <option value="-1" disabled></option>
+      <option value="0">At most once</option>
+      <option value="1">At least once</option>
+      <option value="2">Exactly once</option>
+    </select>
+  </label>
+</form>
+<label>URI <input micaInput type="text" [formControl]="uriInput"></label>

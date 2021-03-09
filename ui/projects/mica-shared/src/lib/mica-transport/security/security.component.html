@@ -1,0 +1,27 @@
+<mica-expandable id="certs" label="SSL/TLS" class="subsection" [showContent]="true" [enabled]="true">
+  <div class="section">
+    <label>
+      <span>Trusted</span>
+      <div>
+        <mica-action-button (open)="uploadFile('trusted')" [expandable]="false" labelWidth="7em">
+          <img class="icon status" [src]="trustedIconPath">
+          <mica-action-button-item class="action" (click)="deleteFile('trusted')"
+          [disabled]="false" label="Delete" title="Delete" icon="assets/images/item_delete.png"></mica-action-button-item>
+        </mica-action-button>
+      </div>
+    </label>
+    <label>
+      <span>Client Certificate</span>
+      <div>
+        <input micaInput class="passphrase" type="password" placeholder="Passphrase..." [(ngModel)]="securityFiles.passphrase">
+        <mica-action-button (open)="uploadFile('client')" [expandable]="false" labelWidth="7em">
+          <img class="icon status" [src]="certIconPath">
+          <mica-action-button-item class="action" (click)="deleteFile('client')"
+          [disabled]="false" label="Delete" title="Delete" icon="assets/images/item_delete.png"></mica-action-button-item>
+        </mica-action-button>
+      </div>
+    </label>
+  </div>
+  <input [hidden]="true" #client type="file" accept="*" (change)="handleFileInput($event.target.files, 'client')">
+  <input [hidden]="true" #trusted type="file" accept="*" (change)="handleFileInput($event.target.files, 'trusted')">
+</mica-expandable>

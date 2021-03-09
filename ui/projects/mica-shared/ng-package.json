@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/mica-shared",
+  "lib": {
+    "entryFile": "src/public_api.ts",
+    "umdModuleIds": {
+      "ng-click-outside": "ngClickOutside",
+      "ngx-spinner": "ngxSpinner",
+      "url-parse": "URL",
+      "uuid": "uuid",
+      "@mica/controls": "@mica/controls"
+    }
+  }
+}

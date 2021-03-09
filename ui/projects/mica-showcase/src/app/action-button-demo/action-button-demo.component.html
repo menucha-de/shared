@@ -1,0 +1,37 @@
+<mica-action-button
+  [text]="label"
+  [title]="title"
+  [checkable]="checkable"
+  [checked]="checked"
+  [expandable]="expandable"
+  defaultIcon="assets/images/item_menu.png"
+  [unexciting]="unexciting"
+  (default)="onDefaultClick()"
+  (open)="onOpenClick()"
+  (check)="onCheckChange($event)">
+  <img src="assets/images/icon_error.png" class="icon">
+  <mica-action-button-item [disabled]="disabled" (click)="onAction1()" class="action" [disabled]="true" label="Action1"></mica-action-button-item>
+</mica-action-button>
+<div class="settings">
+  <h4>Settings</h4>
+  <div>
+    <label for="expandable">Expandable</label><mica-switch id="expandable" [(ngModel)]="expandable"></mica-switch>
+  </div>
+  <div>
+    <label for="label">Text</label><input id="label" type="text" [(ngModel)]="label">
+  </div>
+  <div>
+    <label for="title">Title</label><input id="title" type="text" [(ngModel)]="title">
+  </div>
+  <div>
+    <label for="disabled">DISABLED</label><mica-switch id="disabled" [(ngModel)]="disabled"></mica-switch>
+  </div>
+  <div>
+    <label for="unecxiting">Unexciting</label><mica-switch id="unexciting" [(ngModel)]="unexciting"></mica-switch>
+  </div>
+  <div>
+    <label for="checkable">Checkable</label><mica-switch id="checkable" [(ngModel)]="checkable"></mica-switch>
+  </div>
+</div>
+<h4>Events</h4>
+<div>{{ event }}</div>

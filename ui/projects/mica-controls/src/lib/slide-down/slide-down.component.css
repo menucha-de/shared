@@ -1,0 +1,37 @@
+.header {
+  line-height: 3em;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.toggle {
+  font-size: 1.5rem;
+  line-height: 3em;
+  margin-left: auto;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-image: url('assets/images/round_button.png');
+  /* padding-right: 2em; */
+  font-weight: bold;
+  cursor: pointer;
+}
+.content {
+  overflow: hidden;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.open-button {
+  margin: 5px;
+  vertical-align: middle;
+}
+
+.close-button {
+  transform: rotate(180deg);
+  margin: 2px 5px 8px 5px;
+}

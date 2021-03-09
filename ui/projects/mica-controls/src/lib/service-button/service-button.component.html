@@ -1,0 +1,5 @@
+<label [class.disabled]="disabled" [class.small]="small">
+  <span *ngIf="label && labelPosition === 'left'" [class]="labelPosition">{{ label }}</span>
+  <div class="button" [class.disabled]="disabled" [ngClass]="state"  [class.small]="small"></div>
+  <span *ngIf="label && labelPosition === 'right'" [class]="labelPosition">{{ label }}</span>
+</label>

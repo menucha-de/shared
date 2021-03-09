@@ -1,0 +1,16 @@
+<div class="action-row">
+  <div class="button" (mouseenter)="showActions()" (mouseleave)="showActions(false)">
+    <div class="label" [style.width]="actions.children.length !== 0 ? labelWidth : computedWidth">
+      <div *ngIf="expandable" class="default-action" (click)="onDefaultAction()" [style.background-image]="checkable ? null : defaultIcon && getUrl(defaultIcon)">
+        <mica-checkbox #checkbox *ngIf="checkable" (change)="changeValue(checkbox.value)" [(ngModel)]="checked"></mica-checkbox>
+      </div>
+      <div class="name" [class.inactive]="unexciting" (click)="onOpenAction()">
+        <ng-content select="img.icon"></ng-content><div class="notextwrap" [title]="title">{{ text }}</div>
+      </div>
+    </div>
+    <div #actions class="actions" [@actionsHover]="extend">
+      <ng-content select=".action"></ng-content>
+    </div>
+    <div *ngIf="actions.children.length !== 0" [class]="getextendclass()" (click)="extend = !extend"></div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+<mica-dialog okText="Apply" caption="Subscriber" (close)="onClose($event, subscriber)" *ngIf="subscriber$ | async as subscriber">
+  <div class="transport">
+    <mica-transport [uri]="subscriber.uri" (changeType)="checkSecure($event)"></mica-transport>
+    <mica-security *ngIf="secure" [securityFiles]="securityFiles" (delete)="deleteCert($event, subscriber.id)"></mica-security>
+    <mica-transport-properties [properties]="subscriber.properties"></mica-transport-properties>
+  </div>
+</mica-dialog>

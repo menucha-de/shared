@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+.settings {
+  display: flex;
+  flex-direction: column;
+  label {
+    display: inline-block;
+    width: 7em;
+  }
+  > div {
+    display: flex;
+    align-items: center;
+    margin: 0.1em 0;
+  }
+}

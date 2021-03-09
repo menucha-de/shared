@@ -1,0 +1,25 @@
+.lbl {
+  display: block;
+  margin: 0.25em 0 1em;
+}
+
+.par {
+  margin-left: 1em;
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+}
+
+.par label {
+  width: 8em;
+  font-weight: bold;
+}
+
+.par span {
+  font-style: italic;
+}
+
+.copy {
+  width: 20em;
+  margin: 10px 0;
+}

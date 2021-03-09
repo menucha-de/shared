@@ -1,0 +1,13 @@
+<mica-dialog [caption]="name$ | async" okText="Activate" [okDisabled]="productKey === ''" (close)="onClose($event)">
+  <img class="items" src="assets/images/app_license_big.png">
+  <div class="content">
+    <label>
+      <span>Paste in product key from clipboard</span>
+      <input micaInput type="text" [(ngModel)]="productKey">
+    </label>
+    <label>
+      <span>Don't have a product key ...</span>
+      <button micaButton icon="app_license_email.png" class="request" (click)="getRequest()">Request product key via email</button>
+    </label>
+  </div>
+</mica-dialog>

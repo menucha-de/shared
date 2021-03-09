@@ -1,0 +1,10 @@
+label {
+  display: flex;
+  align-items: center;
+  margin: 0.5em 0;
+
+  >* {
+    margin-left: auto;
+    width: 20em;
+  }
+}

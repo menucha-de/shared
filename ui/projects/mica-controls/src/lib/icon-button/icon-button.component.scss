@@ -1,0 +1,26 @@
+.background {
+  background-image: linear-gradient(#fff, #f2f2f2);
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #d3d3d3;
+  box-shadow: 0 2px 5px #d2d2d2;
+}
+
+.background:active {
+  box-shadow: initial;
+  transform: translateY(2px);
+}
+
+.background.disabled {
+  transform: initial;
+  box-shadow: 0 2px 5px #d2d2d2;
+  opacity: 0.75;
+}
+
+.image {
+  background-repeat: no-repeat;
+  background-size: 42px 42px;
+  background-position: center;
+  height: 42px;
+  width: 42px;
+}

@@ -1,0 +1,36 @@
+.log-message {
+  height: 20em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  box-shadow: inset 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.5em;
+}
+
+.level {
+  height: 32px;
+  width: 32px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.level.INFO {
+	background-image: url('assets/images/icon_log_info.png');
+}
+
+.level.TRACE {
+  background-image: url('assets/images/icon_log_trace.png');
+}
+
+.level.DEBUG {
+  background-image: url('assets/images/icon_log_debug.png');
+}
+
+.level.WARNING {
+  background-image: url('assets/images/icon_log_warning.png');
+}
+
+.level.ERROR {
+  background-image: url('assets/images/icon_log_error.png');
+}

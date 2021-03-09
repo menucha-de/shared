@@ -1,0 +1,18 @@
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label {
+  display: block;
+  background-image: url('assets/images/check.png');
+  width: 32px;
+  height: 32px;
+}
+
+input[type=checkbox]:disabled + label {
+  opacity: 0.7;
+}
+
+input[type=checkbox]:checked + label {
+  background-position: 0 -32px;
+}

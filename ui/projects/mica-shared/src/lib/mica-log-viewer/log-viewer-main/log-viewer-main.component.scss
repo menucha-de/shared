@@ -1,0 +1,150 @@
+.log-select {
+  border-left: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  select {
+    width: 8em;
+  }
+}
+
+.controls {
+  padding: 0 0.5em;
+}
+
+.export {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background: url('assets/images/list_export.png') 0px 0px no-repeat;
+}
+
+.reload {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background: url('assets/images/list_refresh.png') 0px 0px no-repeat;
+}
+
+.config {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+  background: url('assets/images/icon_config.png') 0px 0px no-repeat;
+}
+
+.buttons {
+  display: flex;
+}
+
+tbody {
+  display: block;
+  overflow: auto;
+  width: 100%;
+}
+
+thead tr th {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+  background-color: #e5e5e5;
+}
+
+mica-busy-button {
+  width: 9em;
+}
+
+cdk-virtual-scroll-viewport {
+  height: 256px;
+}
+
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  font-weight: bold
+}
+.row {
+  div {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  div:nth-child(1) {
+    width: 4em;
+  }
+
+  div:nth-child(2) {
+    width: 10em;
+  }
+
+  div:nth-child(3) {
+    width: 15em;
+  }
+
+  div:nth-child(4) {
+    flex-grow: 1;
+    width: 10em;
+  }
+
+  display: flex;
+  line-height: 32px;
+  height: 32px;
+}
+
+.entry {
+  display: flex;
+}
+
+.odd {
+  &:hover {
+    background-color: #fff0b5;
+  }
+  background-color: #e5e5e5;
+  cursor: pointer;
+}
+
+.even {
+  &:hover {
+    background-color: #fff0b5;
+  }
+  cursor: pointer;
+}
+
+.level {
+  height: 32px;
+  width: 32px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.level.INFO {
+	background-image: url('assets/images/icon_log_info.png');
+}
+
+.level.TRACE {
+  background-image: url('assets/images/icon_log_trace.png');
+}
+
+.level.DEBUG {
+  background-image: url('assets/images/icon_log_debug.png');
+}
+
+.level.WARNING {
+  background-image: url('assets/images/icon_log_warning.png');
+}
+
+.level.ERROR {
+  background-image: url('assets/images/icon_log_error.png');
+}
+
+.log {
+  font-size: 1rem;
+}
+
+.log-message {
+  height: 20em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+  box-shadow: inset 1px 2px 5px 1px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.5em;
+}

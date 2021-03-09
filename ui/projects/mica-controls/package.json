@@ -1,0 +1,14 @@
+{
+  "name": "@peramic/controls",
+  "description": "Basic Controls for all HARTING MICA UIs",
+  "version": "2.5.26",
+  "license": "HARTING",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peramic/App.Shared"
+  },
+  "peerDependencies": {
+    "@angular/common": "^9.0.0",
+    "@angular/core": "^9.0.0"
+  }
+}

@@ -1,0 +1,61 @@
+.header {
+  margin: 0.5em 0;
+  font-weight: bold;
+}
+
+table {
+  box-shadow: inset 1px 2px 5px 1px rgba(0, 0, 0, .1);
+  border-radius: .5em;
+  border: 1px solid #d3d3d3;
+  overflow: hidden;
+  border-spacing: 0;
+  width: 100%;
+
+  colgroup {
+    col:nth-child(1) {
+      width: 47%;
+    }
+    col:nth-child(2) {
+      width: 47%;
+    }
+  }
+  
+  tr:last-child {
+    td {
+      border-bottom: 0;
+      input {
+        color: grey;
+      }
+    }
+  }
+
+  td {
+    border-bottom: 1px solid #d3d3d3;
+    overflow: hidden;
+    height: 1.8em;
+    border-left: 1px solid #d3d3d3;
+    padding-left: 0.5em;
+    &:first-child {
+      border-left: initial;
+    }
+    &:last-child {
+      vertical-align: top;
+      border-left: initial;
+      padding-left: initial;
+      div {
+        background: url('assets/images/row_delete.png') center no-repeat;
+        &.remove {
+          line-height: 1.8em;
+          min-height: 100%;
+          padding-left: 10px;
+        }
+      }
+    }
+    .property {
+      font-size: 100%;
+      width: 100%;
+      border: 0;
+      box-shadow: none;
+    }
+  }
+}

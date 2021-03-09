@@ -1,0 +1,17 @@
+label {
+  display: flex;
+  align-items: center;
+  margin: 0.5em 0;
+
+  >*:last-child {
+    margin-left: auto;
+    width: 20em;
+  }
+  &.disabled {
+    color: grey;
+  }
+}
+
+.frame {
+  margin-bottom: 1em;
+}

@@ -1,0 +1,19 @@
+label {
+  display: block;
+  margin-bottom: 1em;
+  span {
+    margin-bottom: 0.5em;
+    display: block;
+  }
+}
+
+input {
+  font-size: 1em;
+  flex: 1;
+  width: 20em;
+}
+
+.request {
+  width: 20em;
+  // margin: 10px 0;
+}

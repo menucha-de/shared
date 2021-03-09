@@ -1,0 +1,14 @@
+<div class="dialog-background" [class.whiteOut]="whiteOut">
+  <div class="dialog-overlay">
+    <div class="dialog-box" [style.margin-top]="topMargin">
+      <div class="close-button" (click)="closeDialog(closeAction.Cancel)"></div>
+      <div class="header">
+        <div>{{ caption }}</div>
+        <div><ng-content select=".items"></ng-content></div>
+      </div>
+      <ng-content></ng-content>
+      <button *ngIf="okText != null" class="confirm-button" [disabled]="okDisabled" (click)="closeDialog(closeAction.OK)">{{ okText }}</button>
+      <ng-content select=".buttons"></ng-content>
+    </div>
+  </div>
+</div>

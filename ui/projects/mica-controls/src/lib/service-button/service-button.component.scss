@@ -1,0 +1,42 @@
+label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  span.left {
+    margin-right: 0.5em;
+  }
+  span.right {
+    margin-left: 0.5em;
+  }
+  &.disabled {
+    color: grey;
+  }
+  &.small {
+    font-size: 0.7em;
+  }
+}
+
+.button {
+  background-size: 49px;
+  width: 49px;
+  height: 49px;
+  background-repeat: no-repeat;
+  &.started {
+    background-image: url('assets/images/service_started.png');
+  }
+  &.pending {
+    background-image: url('assets/images/service_pending.png');
+  }
+  &.stopped {
+    background-image: url('assets/images/service_stopped.png');
+  }
+  &.disabled {
+    opacity: 0.6;
+  }
+  &.small {
+    background-size: 28px;
+    width: 28px;
+    height: 28px;
+  }
+}

@@ -1,0 +1,4 @@
+<button class="button progress-button" (click)="perform()" [disabled]="disabled">
+  <div>{{ text }}</div>
+  <img *ngIf="statusImage !== null" class="icon status" [src]="statusImage" [class.load]="loading" >
+</button>

@@ -1,0 +1,217 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "mica-shared": {
+      "root": "projects/mica-shared",
+      "sourceRoot": "projects/mica-shared/src",
+      "projectType": "library",
+      "prefix": "mica",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mica-shared/tsconfig.lib.json",
+            "project": "projects/mica-shared/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mica-shared/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mica-shared/src/test.ts",
+            "tsConfig": "projects/mica-shared/tsconfig.spec.json",
+            "karmaConfig": "projects/mica-shared/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mica-shared/tsconfig.lib.json",
+              "projects/mica-shared/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "mica-controls": {
+      "root": "projects/mica-controls",
+      "sourceRoot": "projects/mica-controls/src",
+      "projectType": "library",
+      "prefix": "mica",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/mica-controls/tsconfig.lib.json",
+            "project": "projects/mica-controls/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mica-controls/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mica-controls/src/test.ts",
+            "tsConfig": "projects/mica-controls/tsconfig.spec.json",
+            "karmaConfig": "projects/mica-controls/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mica-controls/tsconfig.lib.json",
+              "projects/mica-controls/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "mica-showcase": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/mica-showcase",
+      "sourceRoot": "projects/mica-showcase/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/mica-showcase",
+            "index": "projects/mica-showcase/src/index.html",
+            "main": "projects/mica-showcase/src/main.ts",
+            "polyfills": "projects/mica-showcase/src/polyfills.ts",
+            "tsConfig": "projects/mica-showcase/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/mica-showcase/src/favicon.ico",
+              "projects/mica-showcase/src/assets"
+            ],
+            "styles": [
+              "projects/mica-showcase/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/mica-showcase/src/environments/environment.ts",
+                  "with": "projects/mica-showcase/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mica-showcase:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "mica-showcase:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "mica-showcase:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mica-showcase/src/test.ts",
+            "polyfills": "projects/mica-showcase/src/polyfills.ts",
+            "tsConfig": "projects/mica-showcase/tsconfig.spec.json",
+            "karmaConfig": "projects/mica-showcase/karma.conf.js",
+            "assets": [
+              "projects/mica-showcase/src/favicon.ico",
+              "projects/mica-showcase/src/assets"
+            ],
+            "styles": [
+              "projects/mica-showcase/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mica-showcase/tsconfig.app.json",
+              "projects/mica-showcase/tsconfig.spec.json",
+              "projects/mica-showcase/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/mica-showcase/e2e/protractor.conf.js",
+            "devServerTarget": "mica-showcase:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "mica-showcase:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "mica-showcase",
+  "cli": {
+    "analytics": false
+  }
+}

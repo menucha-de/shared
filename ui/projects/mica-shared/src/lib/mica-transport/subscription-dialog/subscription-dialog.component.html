@@ -1,0 +1,20 @@
+<mica-dialog caption="Subscription" (close)="onClose($event, subscriptor)" okText="Apply" *ngIf="subscriptor$ | async as subscriptor">
+  <div class="items">
+    <mica-service-button [state]="getState(subscriptor)" (click)="toggleEnable(subscriptor)"></mica-service-button>
+  </div>
+  <div class="frame" *ngIf="subscribers$ | async as subscribers">
+    <label>Name <input micaInput type="text" [(ngModel)]="subscriptor.name"></label>
+    <label>Subscriber
+      <select micaSelect [ngModel]="subscriptor.subscriberId" (ngModelChange)="subscriberIdChange($event, subscriptor)">
+        <option value="new">New Subscriber ...</option>
+        <option *ngFor="let subscriber of subscribers" [value]="subscriber.id">{{ subscriber.uri }}</option>
+      </select>
+    </label>
+    <label *ngIf="hasTopicOrPath(subscriptor.subscriberId)">
+      <span *ngIf="hasTopic.get(subscriptor.subscriberId)">Topic Extension</span>
+      <span *ngIf="hasPath.get(subscriptor.subscriberId)">Path Extension</span>
+      <input micaInput type="text" [(ngModel)]="subscriptor.path" [disabled]="!hasTopicOrPath(subscriptor.subscriberId)">
+    </label>
+    <mica-transport-properties [properties]="subscriptor.properties"></mica-transport-properties>
+  </div>
+</mica-dialog>

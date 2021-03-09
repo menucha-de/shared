@@ -1,0 +1,28 @@
+<mica-dialog caption="Log Configuration" (close)="onClose()">
+  <table *ngIf="levels$ | async as levels" class="targets">
+    <tr>
+      <th>Name</th>
+      <th>Target</th>
+      <th>Log Level</th>
+      <th>Clear</th>
+    </tr>
+    <tr *ngFor="let target of targets$ | async">
+      <td [title]="target.label"><span>{{ target.label }}</span></td>
+      <td [title]="target.name"><span>{{ target.name }}</span></td>
+      <td>
+        <select micaSelect [ngModel]="target.level" (ngModelChange)="setLevel($event, target.name)">
+          <option *ngFor="let level of levels | keyvalue" [value]="level.value" >{{ level.value }}</option>
+        </select>
+      </td>
+      <td><div class="delete-button" (click)="clearLog(target.name)"></div></td>
+    </tr>
+  </table>
+  <div class="buttons">
+    <div class="label"><label for="persist">Persist</label></div>
+    <mica-switch id="persist" [(ngModel)]="config.persistent" title="Persist log entries" class="persistent" (change)="updateConfig()" ></mica-switch>
+    <div class="label"><label for="maxMsg">Max. Msg.</label></div>
+    <input micainput id="maxMsg" class="max-entries mica-rounded" type="number" title="Maximum number of entries that should be persist" [(ngModel)]="config.maxEntries" (change)="updateConfig()" />
+    <button micaButton icon="icon_trash.png" class="delete-all-button" (click)="clearAll()">Clear All</button>
+  </div>
+  <ngx-spinner name="log-config" bdColor="rgba(255,255,255,.75)" size="medium" color="#333" type="ball-scale" [fullScreen]="false"></ngx-spinner>
+</mica-dialog>

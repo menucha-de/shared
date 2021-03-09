@@ -1,0 +1,8 @@
+<div class="button" [class.smaller]="smaller" [class.inactive]="!active">
+  <div class="outer">
+      <div class="inner" (click)="leftClickAction($event)" (contextmenu)="rightClickAction($event)">
+        <img src="{{ iconUrl }}" class="icon">
+      </div>
+  </div>
+  <div class="label">{{ label }}</div>
+</div>

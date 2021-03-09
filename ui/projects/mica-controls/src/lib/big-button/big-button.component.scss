@@ -1,0 +1,67 @@
+$small-image: 100px;
+$small-width: $small-image + 10px;
+
+.button {
+  margin-top: 1em;
+  display: inline-block;
+  .outer {
+    margin: 0 40px 15px 0;
+    border-radius: 14px;
+    border: 1px solid #dbd4b7;
+    box-shadow: 0 2px 0 #e3e3e3;
+    background: linear-gradient(rgba(255, 221, 84, 1), rgba(246, 205, 39, 1));
+    cursor: pointer;
+  }
+  .inner {
+    display: block;
+    margin: 4px;
+    box-shadow: 0px 2px 0px #e0b404;
+    border-radius: 12px;
+  }
+  .icon {
+    display: block;
+    border-radius: 9px;
+    background: rgba(255, 204, 0, 1);
+    width: 178px;
+    height: 178px;
+  }
+  .label {
+    text-align: center;
+    margin-right: 40px;
+    word-wrap: break-word;
+  }  
+}
+
+.button.inactive {
+  .outer {
+    background: linear-gradient(rgba(254, 252, 243, 1), rgba(237, 237, 237, 1));
+    border: 1px solid #d2d2d2;
+  }
+  .inner {
+    box-shadow: 0 0 1px 1px #d2d2d2;
+  }
+  .icon {
+    background: rgba(210, 210, 210, 1);
+  }
+  
+}
+
+.button.smaller {
+  .outer {
+    border-radius: 7px;
+    width: $small-width;
+  }
+  .inner {
+    margin: 5px;
+    border-radius: 5px;
+  }
+  .icon {
+    width: $small-image;
+    height: $small-image;
+    border-radius: 4px;
+  }
+  .label {
+    font-size: 1rem;
+    width: 110px;
+  }
+}

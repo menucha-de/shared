@@ -1,0 +1,29 @@
+<div class="header">Properties</div>
+<table [formGroup]="propertiesForm">
+  <colgroup>
+    <col>
+    <col>
+  </colgroup>
+  <ng-container formArrayName="properties">
+    <tr *ngFor="let property of propsArray.controls; let i = index" [formGroupName]="i">
+      <td>
+        <mica-edit-select #propKey [data]="defaultProperties" formControlName="key" placeholder="Property Name" [isGrouped]="false"></mica-edit-select>
+      </td>
+      <td *ngIf="getValueType(propKey.currentOption) == 'string'">
+        <input class="property" type="text" formControlName="value" placeholder="Property Value">
+      </td>
+      <td *ngIf="getValueType(propKey.currentOption) == 'boolean'">
+        <select micaSelect shape="no-border" formControlName="value">
+          <option [value]="true">true</option>
+          <option [value]="false">false</option>
+        </select>
+      </td>
+      <td *ngIf="getValueType(propKey.currentOption) == 'number'">
+        <input class="property" type="number" formControlName="value" placeholder="Property Value">
+      </td>
+      <td>
+        <div class="remove" (click)="i < propsArray.length - 1 && propsArray.removeAt(i)">&nbsp;</div>
+      </td>
+    </tr>
+  </ng-container>
+</table>

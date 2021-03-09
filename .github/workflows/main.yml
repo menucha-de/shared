@@ -1,0 +1,23 @@
+name: Publish package
+
+on:
+  workflow_dispatch:
+    inputs:
+      packages:
+        description: 'Packages'
+        default: 'controls shared'
+        required: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+        registry-url: 'https://npm.pkg.github.com'
+        scope: '@peramic'
+    - run: ./mkapp ${{ github.event.inputs.packages }}
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

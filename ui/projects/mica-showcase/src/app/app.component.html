@@ -1,0 +1,49 @@
+<mica-section-frame class="showcase" [caption]="caption" [showHeader]="showHeader">
+  <div class="subheader-widgets">Widget</div>
+  <mica-expandable label="Header" [simple]="simple">
+    <div class="settings">
+      <div>
+        <label for="caption">caption</label><input id="caption" type="text" [(ngModel)]="caption">
+      </div>
+      <div>
+        <label for="showHeader">showHeader</label><mica-switch id="showHeader"[(ngModel)]="showHeader"></mica-switch>
+      </div>
+    </div>
+  </mica-expandable>
+  <mica-expandable class="expandable1" [label]="label" [enabled]="enabled" [unexciting]="unexciting" [simple]="simple" [showContent]="showContent" (show)="onShow($event)">
+    <div class="header">
+      <label for="enabled">enabled</label><mica-switch id="enabled" [(ngModel)]="enabled"></mica-switch>
+    </div>
+    <div class="settings">
+      <div>
+        <label for="label1">text</label><input id="label1" type="text" [(ngModel)]="label">
+      </div>
+      <div>
+        <label for="unexciting">unexciting</label><mica-switch id="unexciting"[(ngModel)]="unexciting"></mica-switch>
+      </div>
+      <div>
+        <label for="simple">simple</label><mica-switch id="simple" [(ngModel)]="simple"></mica-switch>
+      </div>
+    </div>
+    <h4>Events</h4>
+    <div>{{ lastEvent }}</div>
+  </mica-expandable>
+  <mica-expandable label="ActionButton">
+    <ui-action-button-demo></ui-action-button-demo>
+  </mica-expandable>
+  <mica-expandable label="BigButton">
+    <ui-big-button-demo></ui-big-button-demo>
+  </mica-expandable>
+  <mica-expandable label="Dialog">
+    <ui-dialog-demo></ui-dialog-demo>
+  </mica-expandable>
+  <mica-expandable label="Service Button">
+    <mica-service-button class="header" label="Service" [state]="state" [labelPosition]="labelPosition" [small]="small"></mica-service-button>
+    <label><input type="radio" id="key" name="labelPosition" value="left" [(ngModel)]="labelPosition">Left</label>
+    <label><input type="radio" id="key" name="labelPosition" value="right" [(ngModel)]="labelPosition">Right</label>
+    <label for="small">Small</label><mica-switch id="small" [(ngModel)]="small"></mica-switch>
+    <label><input type="radio" id="key" name="state" value="started" [(ngModel)]="state">Started</label>
+    <label><input type="radio" id="key" name="state" value="stopped" [(ngModel)]="state">Stopped</label>
+    <label><input type="radio" id="key" name="state" value="pending" [(ngModel)]="state">Pending</label>
+  </mica-expandable>
+</mica-section-frame>

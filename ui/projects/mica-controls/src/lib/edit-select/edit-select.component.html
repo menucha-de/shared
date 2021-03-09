@@ -1,0 +1,20 @@
+<div class="dropdown" (clickOutside)="onClickedOutside()">
+  <div class="dropdown_container" tabindex="0" (focus)="ifContainerFocused = true;" (blur)="onDropdownBlur($event)"
+    [ngStyle]="ifContainerFocused ? containerFocusedStyles: {}" #dropdownMenu>
+    <ul class="dropdown_container_list" *ngIf="currentData">
+      <ng-container *ngFor="let pr of currentData | keyvalue">
+        <!-- <li *ngIf="isGrouped" class="header">{{pr.key}}</li> -->
+        <!-- <ng-container *ngFor="let it of pr.value "> -->
+          <li [ngClass]="current == pr.key ? 'active' : ''" (mouseover)="current = pr.key">
+            <a [ngClass]="isGrouped ? 'grouped' : ''" [innerText]="pr.key" (click)="onDropdownItemSelect($event, pr.key)"></a>
+          </li>
+        <!-- </ng-container> -->
+      </ng-container>
+    </ul>
+  </div>
+  <div class="dropdown_button" [ngClass]="isDisabled ? 'disabled' : ''" (mouseup)="onDropdownMenuClick($event)"
+    #dropdownButton>
+    <input #dropdownInput (keyup)="onInputChange($event)" [ngModel]="currentOption" [placeholder]="placeholder" />
+    <img src="assets/images/select_drop_down.png" />
+  </div>
+</div>

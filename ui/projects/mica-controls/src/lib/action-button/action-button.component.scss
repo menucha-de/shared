@@ -1,0 +1,103 @@
+.action-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.1em;
+  margin-left: 4px;
+}
+
+.button {
+  display: flex;
+  border: 1px solid #e5e5e5;
+  border-radius: 5px;
+  background: linear-gradient(#fff, #f2f2f2);
+  box-shadow: 0 2px 5px #d2d2d2;
+  align-items: center;
+  line-height: 42px;
+}
+
+.open-icon {
+  position: absolute;
+}
+
+.label {
+  display: flex;
+  display: -ms-flexbox;
+}
+
+.default-action {
+  cursor: pointer;
+  width: 42px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-right: 1px solid #e5e5e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name {
+  position: relative;
+  flex: 1;
+  padding-left: 0.5em;
+  cursor: pointer;
+  box-sizing: border-box;
+  height: 42px;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.actions {
+  pointer-events: none;
+  display: flex;
+}
+
+.action {
+  cursor: pointer;
+  transition: width 0.5s;
+  background-repeat: no-repeat;
+  background-position: 0.3em center;
+  border-left: 1px solid #e5e5e5;
+  text-indent: 2em;
+  display: flex;
+  display: -ms-flexbox;
+  align-items: center;
+  -ms-flex-align: center;
+  overflow: hidden;
+  width: 6em;
+}
+
+.action.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.extend {
+  background-image: url('assets/images/extend_arrow.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1em;
+  height: 1.8em;
+}
+.notextend {
+  background-image: url('assets/images/extend_arrow.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 1em;
+  height: 42px;
+  transform: rotate(-180deg);
+	border-right: 1px solid #e5e5e5;
+
+}
+.inactive {
+  color: grey;
+}
+
+.notextwrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

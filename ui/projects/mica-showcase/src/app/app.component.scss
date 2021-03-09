@@ -1,0 +1,62 @@
+.icon {
+  position: absolute;
+  right: 8px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  visibility: hidden
+}
+.load {
+  visibility: visible;
+  animation-name: myAni;
+  animation-timing-function: linear;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-delay: 0;
+}
+
+@keyframes myAni {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.showcase {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+}
+
+.settings {
+  display: flex;
+  flex-direction: column;
+  label {
+    display: inline-block;
+    width: 7em;
+  }
+}
+
+.expandable1 {
+  .header {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    label {
+      margin-right: 0.5em;
+    }
+  }
+}
+
+.subheader-widgets {
+  margin-left: auto;
+}
+
+.header {
+  margin-left: auto;
+}
+
+label {
+  display: block;
+}

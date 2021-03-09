@@ -1,0 +1,11 @@
+<div class="header">
+  <div class="controls" *ngIf="toggleControls ? showContent : true">
+    <ng-content select=".controls"></ng-content>
+  </div>
+  <div class="toggle" (click)="click()">{{ showContent ? textClose : textOpen }}
+    <img class="open-button" [class.close-button]="showContent" src="assets/images/section_toggle.png">
+  </div>
+</div>
+<div [@content]="showContent" class="content">
+  <ng-content></ng-content>
+</div>

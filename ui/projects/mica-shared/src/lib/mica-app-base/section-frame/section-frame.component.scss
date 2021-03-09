@@ -1,0 +1,131 @@
+.header_app_icon_outer {
+  margin: 4px 10px 0 0;
+  width: 82px;
+  height: 82px;
+  border-radius: 11px;
+  border: 1px solid #dbd4b7;
+  box-shadow: 0px 2px 0px #e3e3e3;
+  background: linear-gradient(rgba(255, 221, 84, 1), rgba(246, 205, 39, 1));
+}
+
+.header_app_icon_inner {
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  margin: 7px;
+  box-shadow: 0px 2px 0px #e0b404;
+  border-radius: 4px;
+  background: linear-gradient(rgba(255, 204, 0, 1), rgba(255, 204, 0, 1));
+}
+
+.header {
+  position: relative;
+  height: 109px;
+  border-bottom: 1px solid #e5e5e5;
+  top: 31px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  width: 980px;
+}
+
+.subheader {
+  display: flex;
+  align-items: center;
+  line-height: 3em;
+  border-bottom: 1px solid #e5e5e5;
+  .title {
+    font-weight: bold;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding-left: .3em;
+  }
+  >img {
+    cursor: pointer;
+  }
+}
+
+.headertitle {
+  font-size: 30px;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.headerlogo {
+  margin-right: 10px;
+  margin-left: auto;
+}
+
+.content {
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 34px;
+}
+
+.content.withFrame {
+  width: 980px;
+  top: 35px;
+}
+
+.popup-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  .popup {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 3em;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border: 0.15em solid #e5e5e5;
+    border-radius: 0.75em;
+    box-shadow: 0 1px 1px 1px rgba(0, 0, 0, 0.25);
+    padding: 0.25em 0.5em;
+    background: rgba(255, 255, 255, 0.9);
+    margin: 0 auto;
+    width: 900px;
+    .dot {
+      position: absolute;
+      border-radius: 50%;
+      width: 0.5em;
+      height: 0.5em;
+      right: 0.3em;
+      top: 0.3em;
+    }
+    .dot.error {
+      background-color: red;
+    }
+    .dot.warning {
+      background-color: yellow;
+    }
+    img {
+      width: 32px;
+      height: 32px;
+    }
+    .message {
+      padding: 0.2em 0.5em;
+      font-size: 0.8em;
+      line-height: 1.5em;
+    }
+  }
+}
+
+.spinner-background {
+  z-index: 3;
+  position: absolute;
+  width: 100%;
+}
+
+.page-overlay {
+  background-color: rgba(255, 255, 255, .75);
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

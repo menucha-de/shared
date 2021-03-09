@@ -1,0 +1,13 @@
+<mica-expandable label="Subscribers" [group]="group" [simple]="false" [showContent]="expanded" (show)="onToggle($event)" (position)="scroll($event)">
+  <div class="subscriber-row" *ngFor="let subscriber of subscribers$ | async">
+    <mica-action-button [text]="subscriber.uri" [expandable]="false" (open)="showSubscriber(subscriber.id)" [labelWidth]="labelWidth">
+      <mica-action-button-item class="action" label="Delete" icon="assets/images/item_delete.png" (click)="deleteSubscriber(subscriber.id)"></mica-action-button-item>
+    </mica-action-button>
+  </div>
+  <div class="subscriber-add-row">
+    <mica-action-button text="" defaultIcon="assets/images/item_list_refresh.png" (open)="addSubscriber()" (default)="loadSubscribers()" [labelWidth]="labelWidth">
+      <img class="icon" src="assets/images/item_add.png">
+    </mica-action-button>
+  </div>
+</mica-expandable>
+<router-outlet name="subscriber"></router-outlet>

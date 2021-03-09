@@ -1,0 +1,39 @@
+<mica-slide-down textOpen="Expand Log" textClose="Collapse Log" (toggle)="onOpen($event)" [toggleControls]="true">
+  <mica-busy-button class="controls" idleText="Observe" busyText="Observing" (toggle)="onObserve($event)"></mica-busy-button>
+  <div class="controls log-select" *ngIf="levels$ | async as levels">
+    <select micaSelect [ngModel]="level" (ngModelChange)="store.setLevelFilter($event)" [disabled]="observing">
+      <option *ngFor="let level of levels | keyvalue" [value]="level.value" >{{ level.value }}</option>
+    </select>
+  </div>
+  <div class="controls log-select" *ngIf="targets$ | async as targets">
+    <select micaSelect [ngModel]="targetName" (ngModelChange)="store.setTargetFilter($event)" [disabled]="observing">
+      <option *ngFor="let target of targets" [value]="target.name">{{ target.label }}</option>
+    </select>
+  </div>
+  <div class="controls buttons">
+    <div title="Reload Log" class="reload" (click)="onReload()"></div>
+    <div title="Export Log" class="export" (click)="onExport()"></div>
+    <div title="Configure Log" class="config" (click)="onConfigure()"></div>
+  </div>
+  <div class="log">
+    <div class="header row">
+      <div>Level</div>
+      <div>Date/Time</div>
+      <div>Service</div>
+      <div>Message</div>
+    </div>
+    <cdk-virtual-scroll-viewport itemSize="32">
+      <div class="entry row"
+        *cdkVirtualFor="let entry of entries$ | async; let even = even let odd = odd"
+        [class.even]="even"
+        [class.odd]="odd"
+        (click)="onShowDetails(entry.id)"
+      >
+        <div [title]="entry.level" [class]="'level ' + entry.level">&nbsp;</div>
+        <div [title]="getDate(entry.time)">{{ getDate(entry.time) }}</div>
+        <div [title]="entry.targetName">{{ entry.targetName }}</div>
+        <div [title]="entry.message">{{ entry.message }}</div>
+      </div>
+    </cdk-virtual-scroll-viewport>
+  </div>
+</mica-slide-down>

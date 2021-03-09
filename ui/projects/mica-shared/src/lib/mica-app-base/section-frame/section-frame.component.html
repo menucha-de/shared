@@ -1,0 +1,35 @@
+<div class="header" *ngIf="showHeader">
+  <div class="header_app_icon_outer">
+    <a routerLink="/dashboard">
+      <img src="assets/images/apps.png" class="header_app_icon_inner">
+    </a>
+  </div>
+  <div class="headertitle">{{ appTitle }}</div>
+  <img class="headerlogo" src="assets/images/harting_logo.png">
+</div>
+<div class="content" [class.withFrame]="showHeader" *ngIf="baseInfo$ | async as baseInfo">
+  <div class="subheader" *ngIf="showBack">
+    <img src="assets/images/dashboard.png" (click)="onBackClick()">
+    <div class="title" (click)="onBackClick()">{{ caption }}</div>
+    <ng-content select=".subheader-widgets"></ng-content>
+  </div>
+  <mica-license *ngIf="baseInfo.isUnlicensed" [appLabel]="baseInfo.label"></mica-license>
+  <ng-content></ng-content>
+  <mica-log-viewer-main *ngIf="baseInfo.hasLogging"></mica-log-viewer-main>
+</div>
+<ng-container *ngIf="message$ | async as message">
+  <div class="popup-background" *ngIf="message.messageType !== 'clear'" [@fade]>
+    <div class="popup" [style.top]="popupTop" (clickOutside)="confirmError()" [delayClickOutsideInit]="true">
+      <div class="dot" [class]="message.messageType"></div>
+      <img src="assets/images/icon_{{ message.messageType }}.png">
+      <div [title]="message" class="message">{{ message.message }}</div>
+    </div>
+  </div>
+</ng-container>
+<div class="page-overlay" [hidden]="!util.spinning">
+  <div class="spinner-background" [hidden]="!util.spinning"
+      [style.height.px]="util.windowParentInnerHeight" [style.top.px]="util.contentScrollTop - util.contentOffsetTop">
+    <ngx-spinner bdColor="rgba(255,255,255,0)" size="medium" color="#333" type="ball-scale" [fullScreen]="false">
+    </ngx-spinner>
+  </div>
+</div>
