@@ -5,7 +5,7 @@
   "license": "Apache 2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/menucha-de/App.Shared"
+    "url": "https://github.com/menucha-de/shared"
   },
   "peerDependencies": {
     "@angular/common": "^9.0.0",
