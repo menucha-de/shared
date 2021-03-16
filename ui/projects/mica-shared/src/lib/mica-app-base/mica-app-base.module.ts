@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionFrameComponent } from './section-frame/section-frame.component';
-import { MicaControlsModule } from '@peramic/controls';
+import { MicaControlsModule } from '@menucha-de/controls';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { MicaLicenceModule } from '../mica-licence/mica-licence.module';
 import { MicaLogViewerModule } from '../mica-log-viewer/mica-log-viewer.module';

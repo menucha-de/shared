@@ -8,7 +8,7 @@ npm install
 
 for i in $@; do
   if [ $i = "shared" ]; then
-    npm install @peramic/controls
+    npm install @menucha-de/controls
   fi
 
   node_modules/@angular/cli/bin/ng build mica-$i --prod

@@ -1,11 +1,11 @@
 {
-  "name": "@peramic/controls",
-  "description": "Basic Controls for all HARTING MICA UIs",
+  "name": "@menucha-de/controls",
+  "description": "Basic Controls for UIs",
   "version": "2.5.26",
-  "license": "HARTING",
+  "license": "Apache 2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/peramic/App.Shared"
+    "url": "https://github.com/menucha-de/App.Shared"
   },
   "peerDependencies": {
     "@angular/common": "^9.0.0",

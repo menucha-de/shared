@@ -26,7 +26,7 @@ export class LicenseRequestComponent implements OnInit {
     this.location.back();
   }
   copy(val: License) {
-    const emailText = 'Customer information\n---\nCompany:\nHARTING customer no.:' +
+    const emailText = 'Customer information\n---\nCompany:\nCustomer no.:' +
       '\nSalutation:\nFirst name:\nLast name:\nStreet / House no.:\nPostal code / City:\nCountry:\nPhone number:' +
       '\nE-mail address:\n \nRequested product\n---\nProduct: ' + val.product + '\nMICA S/N: ' + val.serial;
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormArray, FormBuilder } from '@angular/forms';
-import { ValueType } from '@peramic/controls';
+import { ValueType } from '@menucha-de/controls';
 
 @Component({
   selector: 'mica-transport-properties',

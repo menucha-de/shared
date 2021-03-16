@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LogViewerMainComponent } from './log-viewer-main/log-viewer-main.component';
-import { MicaControlsModule } from '@peramic/controls';
+import { MicaControlsModule } from '@menucha-de/controls';
 import { FormsModule } from '@angular/forms';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { LogViewerDetailComponent } from './log-viewer-detail/log-viewer-detail.component';

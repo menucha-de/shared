@@ -1,4 +1,4 @@
-# Shared Components for all HARTING MICA UIs
+# Shared Components for UIs
 
 ## Installation
 
@@ -186,7 +186,7 @@ const transportConfig: TransportConfig = {
   subscriptions: {
     // prefix for the REST calls of
     // the subscriptions API. This is highly app specific.
-    restBaseUrl: 'custom/harting/store/subscriptions',
+    restBaseUrl: 'custom/app/subscriptions',
     // location, where the app must
     // navigate to after closing the SubscriptionDialog.
     routeParentUrl: 'main'

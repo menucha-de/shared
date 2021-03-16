@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { LicenseComponent } from './license/license.component';
 import { LicensingComponent } from './licensing/licensing.component';
 import { LicenseRequestComponent } from './license-request/license-request.component';
-import { MicaControlsModule } from '@peramic/controls';
+import { MicaControlsModule } from '@menucha-de/controls';
 import { MicaAppComponentsModule } from '../mica-app-components/mica-app-components.module';
 
 export const licenseRoutes: Routes = [

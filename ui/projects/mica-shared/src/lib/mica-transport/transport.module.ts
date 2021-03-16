@@ -7,7 +7,7 @@ import { RouterModule } from '@angular/router';
 import { TransportPropertiesComponent } from './transport-properties/transport-properties.component';
 import { SecurityComponent } from './security/security.component';
 import { SubscribersComponent } from './subscribers/subscribers.component';
-import { MicaControlsModule } from '@peramic/controls';
+import { MicaControlsModule } from '@menucha-de/controls';
 import { SubscriptionDialogComponent } from './subscription-dialog/subscription-dialog.component';
 import { TransportConfig, TransportConfigService } from './models/transport-config.model';
 import { NgxSpinnerModule } from 'ngx-spinner';

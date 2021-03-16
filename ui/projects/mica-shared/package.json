@@ -1,11 +1,11 @@
 {
-  "name": "@peramic/shared",
-  "description": "Shared Components for all HARTING MICA UIs",
+  "name": "@menucha-de/shared",
+  "description": "Shared Components for UIs",
   "version": "2.5.44",
-  "license": "HARTING",
+  "license": "Apache 2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/peramic/App.Shared"
+    "url": "https://github.com/menucha-de/App.Shared"
   },
   "peerDependencies": {
     "@angular/common": "^9.0.0",
@@ -14,6 +14,6 @@
     "ng-click-outside": "^4.0.0",
     "@angular/cdk": "^9.0.0",
     "ngx-spinner": "^8.0.3",
-    "@peramic/controls": "^2.5.25"
+    "@menucha-de/controls": "^2.5.25"
   }
 }

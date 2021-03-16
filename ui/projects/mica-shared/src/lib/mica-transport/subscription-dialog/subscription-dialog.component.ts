@@ -7,7 +7,7 @@ import { switchMap, map, catchError, tap } from 'rxjs/operators';
 import { CloseAction } from '../../mica-app-components/dialog/close-action.model';
 import { Subscriber } from '../models/subscriber.model';
 import { TransportPropertiesComponent } from '../transport-properties/transport-properties.component';
-import { ServiceState } from '@peramic/controls';
+import { ServiceState } from '@menucha-de/controls';
 import { BroadcasterService } from '../../mica-app-components/services/broadcaster.service';
 import { TransportConfig, TransportConfigService } from '../models/transport-config.model';
 
